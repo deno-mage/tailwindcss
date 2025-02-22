@@ -1,5 +1,5 @@
 import { MageApp } from "@mage/app";
-import { tailwindcss } from "../../tailwindcss.ts";
+import { tailwindcss } from "../../mod.ts";
 
 export const app = new MageApp();
 
