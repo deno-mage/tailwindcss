@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+
+# Deno
+*.tsbuildinfo
+coverage
+
+# Node.js
+node_modules
+
+# Example
+example/public/main.css
+
+# Tests
+plugin/tests/fixtures/entry.css
+plugin/tests/fixtures/output.css
