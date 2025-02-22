@@ -1,6 +1,6 @@
 import { resolve } from "@std/path";
 import { MageApp } from "@mage/app";
-import { useServeFiles } from "@mage/app/serve-files";
+import { serveFiles } from "@mage/app/serve-files";
 import { tailwindcss } from "../../plugin/tailwindcss.ts";
 
 export const app = new MageApp();
@@ -17,7 +17,7 @@ app.get("/", (c) => {
 
 app.get(
   "/public/*",
-  useServeFiles({
+  serveFiles({
     directory: resolve(Deno.cwd(), "example/public"),
   }),
 );
