@@ -8,21 +8,21 @@
 
 ## Mage Tailwindcss
 
-TailwindCSS plugin for Mage.
+[Tailwindcss](https://tailwindcss.com) plugin for Mage.
 
 ### Getting started
+
+Install the plugin.
 
 ```sh
 deno add jsr:@mage/tailwindcss
 ```
 
-An example app:
+Apply the plugin to your Mage app.
 
 ```tsx
 // app.ts
-import { resolve } from "@std/path";
 import { MageApp } from "@mage/app";
-import { useServeFiles } from "@mage/app/serve-files";
 import { tailwindcss } from "@mage/tailwindcss";
 
 export const app = new MageApp();
@@ -33,49 +33,14 @@ app.plugin(
     output: "./public/main.css",
   }),
 );
-
-app.get("/", (c) => {
-  c.html(`<link rel="stylesheet" href="/public/main.css">
-    <h1 class="page-title">Hello, world!!!</h1>`);
-});
-
-app.get(
-  "/public/*",
-  useServeFiles({
-    directory: resolve(Deno.cwd(), "example/public"),
-  }),
-);
-
-// build.ts
-import { app } from "./app.ts";
-
-app.build();
-
-// develop.ts
-import { app } from "./app.ts";
-
-app.develop();
-
-Deno.serve(app.handler);
-
-// serve.ts
-import { app } from "./app.ts";
-
-Deno.serve(app.handler);
 ```
 
-To build and run in production:
+### Watch mode
 
-```sh
-# build assets first
-deno run -A build.ts
+When running `app.develop()` the plugin will compile your CSS automatically on
+changes.
 
-# run the server
-deno run -A serve.ts
-```
+### Building for production
 
-To run in development mode:
-
-```sh
-deno run -A develop.ts
-```
+When running `app.build()` the plugin will compile your CSS once and optimise it
+for production.

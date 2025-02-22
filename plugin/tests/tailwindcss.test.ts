@@ -14,12 +14,14 @@ const entryContent = `@import "tailwindcss";
 }`;
 
 const outputFile = "plugin/tests/fixtures/output.css";
-const outputContent = `.page-title {
+const developOutputContent = `.page-title {
   font-size: var(--text-4xl);
   line-height: var(--tw-leading, var(--text-4xl--line-height));
   --tw-font-weight: var(--font-weight-bold);
   font-weight: var(--font-weight-bold);
 }`;
+const buildOutputContent =
+  `.page-title{font-size:var(--text-4xl);line-height:var(--tw-leading,var(--text-4xl--line-height));`;
 
 beforeEach(async () => {
   if (await exists(entryFile)) {
@@ -46,7 +48,7 @@ describe("tailwindcss", () => {
     await app.build();
 
     const output = await Deno.readTextFile(outputFile);
-    expect(output).toContain(outputContent);
+    expect(output).toContain(buildOutputContent);
   });
 
   // Can't run this test in CI as "watchman" won't install
@@ -61,7 +63,7 @@ describe("tailwindcss", () => {
       await retry(async () => {
         const output = await Deno.readTextFile(outputFile);
 
-        expect(output).toContain(outputContent);
+        expect(output).toContain(developOutputContent);
       });
 
       child.kill();
