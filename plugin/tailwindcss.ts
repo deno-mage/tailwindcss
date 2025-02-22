@@ -1,4 +1,4 @@
-import { resolve } from "jsr:@std/path";
+import { resolve } from "@std/path";
 import type { MagePlugin } from "@mage/app";
 import { MageLogger } from "@mage/app/logs";
 
