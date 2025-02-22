@@ -15,13 +15,12 @@
 Install the plugin.
 
 ```sh
-deno add jsr:@mage/tailwindcss
+deno add jsr:@mage/tailwindcss npm:tailwindcss
 ```
 
 Apply the plugin to your Mage app.
 
 ```tsx
-// app.ts
 import { MageApp } from "@mage/app";
 import { tailwindcss } from "@mage/tailwindcss";
 
