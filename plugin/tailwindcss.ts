@@ -102,6 +102,6 @@ class Tailwindcss implements MagePlugin {
  * @param options Tailwindcss plugin options
  * @returns Tailwindcss plugin
  */
-export const tailwindcss = (options: TailwindCSSPluginOptions) => {
+export const tailwindcss = (options: TailwindCSSPluginOptions): MagePlugin => {
   return new Tailwindcss(options);
 };
