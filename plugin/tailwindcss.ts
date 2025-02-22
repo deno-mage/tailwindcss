@@ -42,7 +42,10 @@ class Tailwindcss implements MagePlugin {
    * Build the CSS file using Tailwindcss CLI
    */
   public onBuild = async () => {
-    await this.spawnTailwindcss(false);
+    await this.spawnTailwindcss({
+      watch: false,
+      minimize: true,
+    });
   };
 
   /**
@@ -50,7 +53,10 @@ class Tailwindcss implements MagePlugin {
    * rebuild it using Tailwindcss CLI
    */
   public onDevelop = async () => {
-    await this.spawnTailwindcss(true);
+    await this.spawnTailwindcss({
+      watch: true,
+      minimize: false,
+    });
   };
 
   /**
@@ -58,7 +64,9 @@ class Tailwindcss implements MagePlugin {
    *
    * @param watch Watch for changes in the CSS file
    */
-  private async spawnTailwindcss(watch: boolean) {
+  private async spawnTailwindcss(
+    options: { watch: boolean; minimize: boolean },
+  ) {
     const command = new Deno.Command("deno", {
       args: [
         "run",
@@ -68,7 +76,8 @@ class Tailwindcss implements MagePlugin {
         this._entry,
         "-o",
         this._output,
-        watch ? "--watch" : "",
+        options.watch ? "--watch" : "",
+        options.minimize ? "--minify" : "",
       ],
       stdout: "piped",
       stderr: "piped",
