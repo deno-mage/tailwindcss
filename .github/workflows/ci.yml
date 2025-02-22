@@ -23,7 +23,7 @@ jobs:
           deno-version-file: .dvmrc
 
       - name: Install
-        run: deno install
+        run: deno install --allow-scripts=npm:@parcel/watcher@2.5.1
 
       - name: Check format
         run: deno task format --check
