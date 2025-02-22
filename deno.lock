@@ -2,17 +2,17 @@
   "version": "4",
   "specifiers": {
     "jsr:@mage/app@~0.5.1": "0.5.1",
+    "jsr:@standard-schema/spec@1": "1.0.0",
     "jsr:@std/assert@^1.0.10": "1.0.11",
     "jsr:@std/assert@^1.0.11": "1.0.11",
-    "jsr:@std/async@*": "1.0.10",
     "jsr:@std/async@^1.0.10": "1.0.10",
+    "jsr:@std/async@^1.0.9": "1.0.10",
     "jsr:@std/cache@~0.1.3": "0.1.3",
     "jsr:@std/cli@^1.0.12": "1.0.13",
     "jsr:@std/data-structures@^1.0.6": "1.0.6",
     "jsr:@std/encoding@^1.0.7": "1.0.7",
     "jsr:@std/expect@^1.0.13": "1.0.13",
     "jsr:@std/fmt@^1.0.5": "1.0.5",
-    "jsr:@std/fs@*": "1.0.13",
     "jsr:@std/fs@^1.0.11": "1.0.13",
     "jsr:@std/fs@^1.0.9": "1.0.13",
     "jsr:@std/html@^1.0.3": "1.0.3",
@@ -23,20 +23,24 @@
     "jsr:@std/path@*": "1.0.8",
     "jsr:@std/path@^1.0.8": "1.0.8",
     "jsr:@std/streams@^1.0.9": "1.0.9",
-    "jsr:@std/testing@*": "1.0.9",
     "jsr:@std/testing@^1.0.9": "1.0.9",
     "npm:@tailwindcss/cli@*": "4.0.6",
-    "npm:tailwindcss@^4.0.6": "4.0.6"
+    "npm:@tailwindcss/cli@^4.0.8": "4.0.8",
+    "npm:tailwindcss@^4.0.8": "4.0.8"
   },
   "jsr": {
     "@mage/app@0.5.1": {
       "integrity": "306a423e157f32e513676120f22acbb1b1b86ea730a804e2c07f8ee21f0b45ae",
       "dependencies": [
+        "jsr:@standard-schema/spec",
         "jsr:@std/cache",
         "jsr:@std/fs@^1.0.11",
         "jsr:@std/http",
         "jsr:@std/path@^1.0.8"
       ]
+    },
+    "@standard-schema/spec@1.0.0": {
+      "integrity": "4f20bbcf34e92b92f8c01589b958abc7c87385fa9a96170cecdc643d4d5737c0"
     },
     "@std/assert@1.0.11": {
       "integrity": "2461ef3c368fe88bc60e186e7744a93112f16fd110022e113a0849e94d1c83c1",
@@ -49,9 +53,6 @@
     },
     "@std/cache@0.1.3": {
       "integrity": "8d3ab61d994d0915295048999f34a8ce2280f0e4d1f4cccb08c9e3d297c0c6ec"
-    },
-    "@std/cli@1.0.12": {
-      "integrity": "e5cfb7814d189da174ecd7a34fbbd63f3513e24a1b307feb2fcd5da47a070d90"
     },
     "@std/cli@1.0.13": {
       "integrity": "5db2d95ab2dca3bca9fb6ad3c19908c314e93d6391c8b026725e4892d4615a69"
@@ -113,6 +114,7 @@
       "integrity": "9bdd4ac07cb13e7594ac30e90f6ceef7254ac83a9aeaa089be0008f33aab5cd4",
       "dependencies": [
         "jsr:@std/assert@^1.0.10",
+        "jsr:@std/async@^1.0.9",
         "jsr:@std/data-structures",
         "jsr:@std/fs@^1.0.9",
         "jsr:@std/internal",
@@ -186,13 +188,26 @@
       "integrity": "sha512-5EybaKjLL6ruuKq4PFMpf60npR6x6MmVlqvXWca7ZcujQd7rj5vckNHi2M7Bn0U7dkWmmOm3s/9USLL7BZuudw==",
       "dependencies": [
         "@parcel/watcher",
-        "@tailwindcss/node",
-        "@tailwindcss/oxide",
+        "@tailwindcss/node@4.0.6",
+        "@tailwindcss/oxide@4.0.6",
         "enhanced-resolve",
         "lightningcss",
         "mri",
         "picocolors",
-        "tailwindcss"
+        "tailwindcss@4.0.6"
+      ]
+    },
+    "@tailwindcss/cli@4.0.8": {
+      "integrity": "sha512-nFN0QjibH8Yhd028TP+WnStfEG0Bw9uS8ojqJNeEo4RfXH8Mfi42Y9lvhl3yPcii8/xt0/Mq/kZywjvpkcgLJg==",
+      "dependencies": [
+        "@parcel/watcher",
+        "@tailwindcss/node@4.0.8",
+        "@tailwindcss/oxide@4.0.8",
+        "enhanced-resolve",
+        "lightningcss",
+        "mri",
+        "picocolors",
+        "tailwindcss@4.0.8"
       ]
     },
     "@tailwindcss/node@4.0.6": {
@@ -200,56 +215,113 @@
       "dependencies": [
         "enhanced-resolve",
         "jiti",
-        "tailwindcss"
+        "tailwindcss@4.0.6"
+      ]
+    },
+    "@tailwindcss/node@4.0.8": {
+      "integrity": "sha512-FKArQpbrbwv08TNT0k7ejYXpF+R8knZFAatNc0acOxbgeqLzwb86r+P3LGOjIeI3Idqe9CVkZrh4GlsJLJKkkw==",
+      "dependencies": [
+        "enhanced-resolve",
+        "jiti",
+        "tailwindcss@4.0.8"
       ]
     },
     "@tailwindcss/oxide-android-arm64@4.0.6": {
       "integrity": "sha512-xDbym6bDPW3D2XqQqX3PjqW3CKGe1KXH7Fdkc60sX5ZLVUbzPkFeunQaoP+BuYlLc2cC1FoClrIRYnRzof9Sow=="
     },
+    "@tailwindcss/oxide-android-arm64@4.0.8": {
+      "integrity": "sha512-We7K79+Sm4mwJHk26Yzu/GAj7C7myemm7PeXvpgMxyxO70SSFSL3uCcqFbz9JA5M5UPkrl7N9fkBe/Y0iazqpA=="
+    },
     "@tailwindcss/oxide-darwin-arm64@4.0.6": {
       "integrity": "sha512-1f71/ju/tvyGl5c2bDkchZHy8p8EK/tDHCxlpYJ1hGNvsYihZNurxVpZ0DefpN7cNc9RTT8DjrRoV8xXZKKRjg=="
+    },
+    "@tailwindcss/oxide-darwin-arm64@4.0.8": {
+      "integrity": "sha512-Lv9Isi2EwkCTG1sRHNDi0uRNN1UGFdEThUAGFrydRmQZnraGLMjN8gahzg2FFnOizDl7LB2TykLUuiw833DSNg=="
     },
     "@tailwindcss/oxide-darwin-x64@4.0.6": {
       "integrity": "sha512-s/hg/ZPgxFIrGMb0kqyeaqZt505P891buUkSezmrDY6lxv2ixIELAlOcUVTkVh245SeaeEiUVUPiUN37cwoL2g=="
     },
+    "@tailwindcss/oxide-darwin-x64@4.0.8": {
+      "integrity": "sha512-fWfywfYIlSWtKoqWTjukTHLWV3ARaBRjXCC2Eo0l6KVpaqGY4c2y8snUjp1xpxUtpqwMvCvFWFaleMoz1Vhzlw=="
+    },
     "@tailwindcss/oxide-freebsd-x64@4.0.6": {
       "integrity": "sha512-Z3Wo8FWZnmio8+xlcbb7JUo/hqRMSmhQw8IGIRoRJ7GmLR0C+25Wq+bEX/135xe/yEle2lFkhu9JBHd4wZYiig=="
+    },
+    "@tailwindcss/oxide-freebsd-x64@4.0.8": {
+      "integrity": "sha512-SO+dyvjJV9G94bnmq2288Ke0BIdvrbSbvtPLaQdqjqHR83v5L2fWADyFO+1oecHo9Owsk8MxcXh1agGVPIKIqw=="
     },
     "@tailwindcss/oxide-linux-arm-gnueabihf@4.0.6": {
       "integrity": "sha512-SNSwkkim1myAgmnbHs4EjXsPL7rQbVGtjcok5EaIzkHkCAVK9QBQsWeP2Jm2/JJhq4wdx8tZB9Y7psMzHYWCkA=="
     },
+    "@tailwindcss/oxide-linux-arm-gnueabihf@4.0.8": {
+      "integrity": "sha512-ZSHggWiEblQNV69V0qUK5vuAtHP+I+S2eGrKGJ5lPgwgJeAd6GjLsVBN+Mqn2SPVfYM3BOpS9jX/zVg9RWQVDQ=="
+    },
     "@tailwindcss/oxide-linux-arm64-gnu@4.0.6": {
       "integrity": "sha512-tJ+mevtSDMQhKlwCCuhsFEFg058kBiSy4TkoeBG921EfrHKmexOaCyFKYhVXy4JtkaeeOcjJnCLasEeqml4i+Q=="
+    },
+    "@tailwindcss/oxide-linux-arm64-gnu@4.0.8": {
+      "integrity": "sha512-xWpr6M0OZLDNsr7+bQz+3X7zcnDJZJ1N9gtBWCtfhkEtDjjxYEp+Lr5L5nc/yXlL4MyCHnn0uonGVXy3fhxaVA=="
     },
     "@tailwindcss/oxide-linux-arm64-musl@4.0.6": {
       "integrity": "sha512-IoArz1vfuTR4rALXMUXI/GWWfx2EaO4gFNtBNkDNOYhlTD4NVEwE45nbBoojYiTulajI4c2XH8UmVEVJTOJKxA=="
     },
+    "@tailwindcss/oxide-linux-arm64-musl@4.0.8": {
+      "integrity": "sha512-5tz2IL7LN58ssGEq7h/staD7pu/izF/KeMWdlJ86WDe2Ah46LF3ET6ZGKTr5eZMrnEA0M9cVFuSPprKRHNgjeg=="
+    },
     "@tailwindcss/oxide-linux-x64-gnu@4.0.6": {
       "integrity": "sha512-QtsUfLkEAeWAC3Owx9Kg+7JdzE+k9drPhwTAXbXugYB9RZUnEWWx5x3q/au6TvUYcL+n0RBqDEO2gucZRvRFgQ=="
+    },
+    "@tailwindcss/oxide-linux-x64-gnu@4.0.8": {
+      "integrity": "sha512-KSzMkhyrxAQyY2o194NKVKU9j/c+NFSoMvnHWFaNHKi3P1lb+Vq1UC19tLHrmxSkKapcMMu69D7+G1+FVGNDXQ=="
     },
     "@tailwindcss/oxide-linux-x64-musl@4.0.6": {
       "integrity": "sha512-QthvJqIji2KlGNwLcK/PPYo7w1Wsi/8NK0wAtRGbv4eOPdZHkQ9KUk+oCoP20oPO7i2a6X1aBAFQEL7i08nNMA=="
     },
+    "@tailwindcss/oxide-linux-x64-musl@4.0.8": {
+      "integrity": "sha512-yFYKG5UtHTRimjtqxUWXBgI4Tc6NJe3USjRIVdlTczpLRxq/SFwgzGl5JbatCxgSRDPBFwRrNPxq+ukfQFGdrw=="
+    },
     "@tailwindcss/oxide-win32-arm64-msvc@4.0.6": {
       "integrity": "sha512-+oka+dYX8jy9iP00DJ9Y100XsqvbqR5s0yfMZJuPR1H/lDVtDfsZiSix1UFBQ3X1HWxoEEl6iXNJHWd56TocVw=="
+    },
+    "@tailwindcss/oxide-win32-arm64-msvc@4.0.8": {
+      "integrity": "sha512-tndGujmCSba85cRCnQzXgpA2jx5gXimyspsUYae5jlPyLRG0RjXbDshFKOheVXU4TLflo7FSG8EHCBJ0EHTKdQ=="
     },
     "@tailwindcss/oxide-win32-x64-msvc@4.0.6": {
       "integrity": "sha512-+o+juAkik4p8Ue/0LiflQXPmVatl6Av3LEZXpBTfg4qkMIbZdhCGWFzHdt2NjoMiLOJCFDddoV6GYaimvK1Olw=="
     },
+    "@tailwindcss/oxide-win32-x64-msvc@4.0.8": {
+      "integrity": "sha512-T77jroAc0p4EHVVgTUiNeFn6Nj3jtD3IeNId2X+0k+N1XxfNipy81BEkYErpKLiOkNhpNFjPee8/ZVas29b2OQ=="
+    },
     "@tailwindcss/oxide@4.0.6": {
       "integrity": "sha512-lVyKV2y58UE9CeKVcYykULe9QaE1dtKdxDEdrTPIdbzRgBk6bdxHNAoDqvcqXbIGXubn3VOl1O/CFF77v/EqSA==",
       "dependencies": [
-        "@tailwindcss/oxide-android-arm64",
-        "@tailwindcss/oxide-darwin-arm64",
-        "@tailwindcss/oxide-darwin-x64",
-        "@tailwindcss/oxide-freebsd-x64",
-        "@tailwindcss/oxide-linux-arm-gnueabihf",
-        "@tailwindcss/oxide-linux-arm64-gnu",
-        "@tailwindcss/oxide-linux-arm64-musl",
-        "@tailwindcss/oxide-linux-x64-gnu",
-        "@tailwindcss/oxide-linux-x64-musl",
-        "@tailwindcss/oxide-win32-arm64-msvc",
-        "@tailwindcss/oxide-win32-x64-msvc"
+        "@tailwindcss/oxide-android-arm64@4.0.6",
+        "@tailwindcss/oxide-darwin-arm64@4.0.6",
+        "@tailwindcss/oxide-darwin-x64@4.0.6",
+        "@tailwindcss/oxide-freebsd-x64@4.0.6",
+        "@tailwindcss/oxide-linux-arm-gnueabihf@4.0.6",
+        "@tailwindcss/oxide-linux-arm64-gnu@4.0.6",
+        "@tailwindcss/oxide-linux-arm64-musl@4.0.6",
+        "@tailwindcss/oxide-linux-x64-gnu@4.0.6",
+        "@tailwindcss/oxide-linux-x64-musl@4.0.6",
+        "@tailwindcss/oxide-win32-arm64-msvc@4.0.6",
+        "@tailwindcss/oxide-win32-x64-msvc@4.0.6"
+      ]
+    },
+    "@tailwindcss/oxide@4.0.8": {
+      "integrity": "sha512-KfMcuAu/Iw+DcV1e8twrFyr2yN8/ZDC/odIGta4wuuJOGkrkHZbvJvRNIbQNhGh7erZTYV6Ie0IeD6WC9Y8Hcw==",
+      "dependencies": [
+        "@tailwindcss/oxide-android-arm64@4.0.8",
+        "@tailwindcss/oxide-darwin-arm64@4.0.8",
+        "@tailwindcss/oxide-darwin-x64@4.0.8",
+        "@tailwindcss/oxide-freebsd-x64@4.0.8",
+        "@tailwindcss/oxide-linux-arm-gnueabihf@4.0.8",
+        "@tailwindcss/oxide-linux-arm64-gnu@4.0.8",
+        "@tailwindcss/oxide-linux-arm64-musl@4.0.8",
+        "@tailwindcss/oxide-linux-x64-gnu@4.0.8",
+        "@tailwindcss/oxide-linux-x64-musl@4.0.8",
+        "@tailwindcss/oxide-win32-arm64-msvc@4.0.8",
+        "@tailwindcss/oxide-win32-x64-msvc@4.0.8"
       ]
     },
     "braces@3.0.3": {
@@ -360,6 +432,9 @@
     "tailwindcss@4.0.6": {
       "integrity": "sha512-mysewHYJKaXgNOW6pp5xon/emCsfAMnO8WMaGKZZ35fomnR/T5gYnRg2/yRTTrtXiEl1tiVkeRt0eMO6HxEZqw=="
     },
+    "tailwindcss@4.0.8": {
+      "integrity": "sha512-Me7N5CKR+D2A1xdWA5t5+kjjT7bwnxZOE6/yDI/ixJdJokszsn2n++mdU5yJwrsTpqFX2B9ZNMBJDwcqk9C9lw=="
+    },
     "tapable@2.2.1": {
       "integrity": "sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ=="
     },
@@ -378,7 +453,8 @@
       "jsr:@std/expect@^1.0.13",
       "jsr:@std/fs@^1.0.11",
       "jsr:@std/path@^1.0.8",
-      "jsr:@std/testing@^1.0.9"
+      "jsr:@std/testing@^1.0.9",
+      "npm:@tailwindcss/cli@^4.0.8"
     ]
   }
 }

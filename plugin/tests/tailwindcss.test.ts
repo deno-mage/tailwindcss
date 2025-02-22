@@ -49,21 +49,24 @@ describe("tailwindcss", () => {
     expect(output).toContain(outputContent);
   });
 
-  it("should watch for changes in css file", async () => {
-    const command = new Deno.Command("deno", {
-      args: ["run", "-A", "plugin/tests/fixtures/develop.ts"],
+  // Can't run this test in CI as "watchman" won't install
+  if (Deno.env.get("CI") !== "true") {
+    it("should watch for changes in css file", async () => {
+      const command = new Deno.Command("deno", {
+        args: ["run", "-A", "plugin/tests/fixtures/develop.ts"],
+      });
+
+      const child = command.spawn();
+
+      await retry(async () => {
+        const output = await Deno.readTextFile(outputFile);
+
+        expect(output).toContain(outputContent);
+      });
+
+      child.kill();
+
+      await child.status;
     });
-
-    const child = command.spawn();
-
-    await retry(async () => {
-      const output = await Deno.readTextFile(outputFile);
-
-      expect(output).toContain(outputContent);
-    });
-
-    child.kill();
-
-    await child.status;
-  });
+  }
 });

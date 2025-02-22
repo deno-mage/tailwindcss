@@ -29,10 +29,9 @@ export const app = new MageApp();
 
 app.plugin(
   tailwindcss({
-    entry: "./example/src/main.css",
-    output: "./example/public/main.css",
-    configFilepath: "./example/tailwind.config.ts",
-  })
+    entry: "./src/main.css",
+    output: "./public/main.css",
+  }),
 );
 
 app.get("/", (c) => {
@@ -44,7 +43,7 @@ app.get(
   "/public/*",
   useServeFiles({
     directory: resolve(Deno.cwd(), "example/public"),
-  })
+  }),
 );
 
 // build.ts
