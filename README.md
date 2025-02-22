@@ -6,7 +6,7 @@
   Build web applications with <a href="https://deno.com">Deno</a>
 </div>
 
-## Mage TailwindCSS
+## Mage Tailwindcss
 
 TailwindCSS plugin for Mage.
 
