@@ -40,7 +40,7 @@ app.plugin(
 When running `app.develop()` the plugin will compile your CSS automatically on
 changes.
 
-### Building for production
+### Building for production
 
 When running `app.build()` the plugin will compile your CSS once and optimise it
 for production.
