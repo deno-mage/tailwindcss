@@ -31,7 +31,7 @@ jobs:
       - name: Install
         run: |
           deno install --allow-scripts=npm:@parcel/watcher@2.5.1
-          deno install npm:watchman
+          npm i -g watchman
 
       - name: Check format
         run: deno task format --check
