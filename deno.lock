@@ -1,7 +1,7 @@
 {
   "version": "4",
   "specifiers": {
-    "jsr:@mage/app@~0.6.1": "0.6.1",
+    "jsr:@mage/app@~0.7.1": "0.7.1",
     "jsr:@standard-schema/spec@1": "1.0.0",
     "jsr:@std/assert@^1.0.10": "1.0.11",
     "jsr:@std/assert@^1.0.11": "1.0.11",
@@ -29,8 +29,8 @@
     "npm:tailwindcss@^4.0.8": "4.0.8"
   },
   "jsr": {
-    "@mage/app@0.6.1": {
-      "integrity": "acfa0b9b47ec922b7e204ae8bf973599eaa7932e1eb89abf923e3010dad0ad29",
+    "@mage/app@0.7.1": {
+      "integrity": "9dd58b2d762a1f8c485da7aef2ddb3cf622578b5de84f1dbf19b4c04d30fdb2b",
       "dependencies": [
         "jsr:@standard-schema/spec",
         "jsr:@std/cache",
@@ -447,7 +447,7 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@mage/app@~0.6.1",
+      "jsr:@mage/app@~0.7.1",
       "jsr:@std/assert@^1.0.11",
       "jsr:@std/async@^1.0.10",
       "jsr:@std/expect@^1.0.13",
