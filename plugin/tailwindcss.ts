@@ -62,7 +62,7 @@ class Tailwindcss implements MagePlugin {
   /**
    * Build CSS file using Tailwindcss CLI
    *
-   * @param watch Watch for changes in the CSS file
+   * @param options Tailwindcss CLI options
    */
   private async spawnTailwindcss(
     options: { watch: boolean; minimize: boolean },
